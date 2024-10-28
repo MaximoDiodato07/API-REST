@@ -1,0 +1,112 @@
+:root{
+    --color-1: #FFF8EA ;
+    --color-2: #9E7676 ;
+    --color-3: #815B5B ;
+    --color-4: #594545 ;
+    --color-5: #2c2525 ;
+}
+
+*{
+    margin: 0 ;
+    padding: 0 ;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-1) !important;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header{
+    width: 100%;
+    height: 10%;
+    background-color: var(--color-4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+.links{
+    background-color: var(--color-3);
+    color: var(--color-1);
+    padding: 15px;
+    border: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+    font-weight: bolder;
+    transition: all .5s; 
+    text-decoration: none;
+}
+.links:hover{
+    background-color: var(--color-1);
+    color: var(--color-3);
+}
+
+#addBtn{
+    background-color: var(--color-1);
+    color: var(--color-3);
+    padding: 15px;
+    border: transparent 1.5px solid ;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+    font-weight: bolder;
+    transition: all .5s;
+}
+
+#addBtn:hover{
+    color: var(--color-5);
+    border-color: var(--color-5);
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    height: 90%;
+    box-sizing: border-box;
+    padding: 30px 50px 0;
+}
+
+.productsContainer{
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    overflow: scroll;
+}
+
+/* Ocultar scrollbar en navegadores basados en WebKit (Chrome/Safari) */
+.productsContainer::-webkit-scrollbar {
+    display: none; /* Ocultar scrollbar */
+}
+
+.headerTable tr th{
+    background-color: transparent !important;
+    color: var(--color-4) !important;
+    text-transform: uppercase;
+}
+
+.headerTable{
+    border-bottom: var(--color-2) 2px solid;
+}
+
+
+.bodyTable{
+    background-color: transparent !important;
+    color: var(--color-5) !important;
+    padding-bottom: 10px !important; 
+}
+
+.optionsDiv{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: space-evenly;
+}
+

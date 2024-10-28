@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetchs</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Archivos bootstrap -->
+    <link rel="stylesheet" href="/PHP/styles/bootstrap/css/bootstrap.min.css">
+    <script src="/PHP/styles/bootstrap/js/bootstrap.min.js"> </script>
+
+    <!-- Sweet Alert -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    
+</head>
+
+<!-- Traer: codigo, descripcion, "nombre categoria", precio -->
+
+<body>
+    <header>
+        <a href="/PHP/index.html" class="links"> Clientes</a>
+
+        <div class="options">
+            <button class="btn" id="addBtn" data-bs-toggle="modal" data-bs-target="#articleModal">
+                Agregar
+            </button>
+        </div>
+       
+    </header>
+    
+    <main>
+        <div class= "productsContainer">
+            <table class="table table-borderless">
+                <thead class="headerTable">
+                    <tr >
+                      <th scope="col" class="col-1"> # </th>
+                      <th scope="col" class="col-5"> Descripcion </th>
+                      <th scope="col" class="col-4"> Categoria </th>
+                      <th scope="col" class="col-1"> $ </th>
+                      <th scope="col" class="col 1"> Opciones </th>
+                    </tr>
+                </thead>
+                <tbody id="productTable">
+                    <!-- Contenido desde JS -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <div class="modal fade" id="articleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header" style="background-color: var(--color-1) !important">
+              <p id="modalHeader" class="fs-5 my-0">  </p>  
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div>
+                <p class="ms-3 mt-2 mb-0 fs-6 text-secondary"> (*) indica que los campos son obligatorios</p>
+            </div>
+            <div class="modal-body">
+                <form id="modalForm">
+                    <input type="hidden" id="idInput" value="">
+                    <div class="d-flex mb-3 gap-3">
+                        <div class="form-floating col-6">
+                            <input type="text" id="articleCode" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                            <label for="articleCode"> Codigo (*) </label>
+                        </div>
+                        <div class="input-group">
+                            <DIV class="form-floating col-6">    
+                                <input type="text" id="articleDescription" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                <label for="articleDescription"> Descripcion (*) </label>
+                            </DIV>
+                        </div>
+                    </div>
+
+                    <div class="row gx-3 mb-3">
+                        <div class="col-2 form-floating">
+                            <input type="number" id="articlePrice" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                            <label for="articlePrice" class="ms-1"> Precio (*) </label>
+                        </div>
+                        <div class="col-2 form-floating">
+                            <input type="number" id="articleIva" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                            <label for="articleIva" class="ms-1"> Iva (*) </label>
+                        </div>
+                        <div class="col-2 d-flex align-items-center">
+                            <div class="form-check">
+                                <label class="form-check-label text-uppercase" for="exampleCheck1"> ¿HABILITADO?</label>
+                                <input type="checkbox" class="form-check-input" id="articleEnabled">
+                            </div>
+                        </div>
+                        <div class="col-6 d-flex align-items-center">
+                            <select class="form-select" id="articleCategorie" aria-label="Default select example">
+                              
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-floating mb-5">
+                        <input type="text" id="articleExtendDescription" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        <label for="articleExtendDescription"> Descripcion Larga </label>
+                    </div>
+                    
+
+                    <div class="d-flex justify-content-end">    
+                        <button type="submit" class="btn btn-primary text-uppercase" id="formBtn"> Grabar </button>
+                    </div>
+
+                    
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <script src="articles.js"></script>
+</body>
